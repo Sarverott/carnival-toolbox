@@ -1,0 +1,39 @@
+{
+  "name": "carnival-toolbox",
+  "version": "1.0.0",
+  "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarverott/carnival-toolbox.git"
+  },
+  "keywords": [
+    "namespace",
+    "camelcase",
+    "camel",
+    "case",
+    "snakecase",
+    "kebab",
+    "kebabcase",
+    "json",
+    "file",
+    "jsonfile",
+    "json-file",
+    "snake",
+    "node",
+    "tools",
+    "toolbox",
+    "toolkit",
+    "pascal",
+    "pascalcase"
+  ],
+  "author": "Sett Sarverott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sarverott/carnival-toolbox/issues"
+  },
+  "homepage": "https://github.com/Sarverott/carnival-toolbox#readme"
+}
