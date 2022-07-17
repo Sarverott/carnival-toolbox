@@ -1,4 +1,4 @@
 module.exports={
-  JSON:require("./json-extend.js"),
-  Namespacer:require("./namespacer.js"),
+  jsonExt:require("./json-gadgets.js"),
+  caseChange:require("./case-gadgets.js")
 }
