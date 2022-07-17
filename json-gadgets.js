@@ -52,7 +52,7 @@ class JsonFile{
       encoding:"utf8"
     };
     Object.assign(this.setup, customSetup);
-    this.safeCreate();
+    this.safeCreate(filepath);
     //this.watcher=null;
   }
   //live
