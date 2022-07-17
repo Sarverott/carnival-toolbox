@@ -4,6 +4,7 @@
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
   "main": "main.js",
   "scripts": {
+    "test": "jest",
     "start": "node main.js",
     "b-dev": "git checkout development",
     "b-release": "git checkout master",
