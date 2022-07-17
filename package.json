@@ -10,8 +10,8 @@
     "git.refresh": "git fetch --all && git pull --all",
     "git.upload": "git push --all",
     "git.update": "git fetch --all && git pull --all && git push --all",
-    "dev-to-debug": "git merge development",
-    "savedebug":"git add * && git commit -e"
+    "dev-to-debug": "#git merge development",
+    "savedebug":"#git add * && git commit -e"
   },
   "repository": {
     "type": "git",
