@@ -5,14 +5,15 @@ var kebabcase=[
 var pascalcase=[
   function(i){
     var o=[""], x=i.length;
+    //console.log(i);
     do{
       o[0]=i[--x]+o[0];
       if(
         x
         &&
-        i.charcodeAt(x)>59
+        i.charCodeAt(x)>59
         &&
-        i.charcodeAt(x)<91
+        i.charCodeAt(x)<91
       )o.unshift("");
     }while(x);
     return o.map((x)=>x.toLowerCase());
@@ -24,7 +25,7 @@ var camelcase=[
     var o=[""], x=i.length;
     do{
       o[0]=i[--x]+o[0];
-      if(x&&i.charcodeAt(x)>59&&i.charcodeAt(x)<91)o.unshift("");
+      if(x&&i.charCodeAt(x)>59&&i.charCodeAt(x)<91)o.unshift("");
     }while(x);
     return o.map((x)=>x.toLowerCase());
   },
