@@ -1,6 +1,6 @@
 {
   "name": "carnival-toolbox",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
   "main": "_index.js",
   "scripts": {
@@ -43,8 +43,7 @@
   },
   "homepage": "https://github.com/Sarverott/carnival-toolbox#readme",
   "publishConfig": {
-    "@sarverott:registry": "https://npm.pkg.github.com",
-    "registry": "https://npm.pkg.github.com"
+    "@sarverott:registry": "https://registry.npmjs.org/",
   },
   "devDependencies": {
     "eslint": "^8.56.0",
