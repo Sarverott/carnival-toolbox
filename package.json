@@ -1,18 +1,16 @@
 {
   "name": "carnival-toolbox",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
-  "main": "main.js",
+  "main": "_index.js",
   "scripts": {
-    "test": "jest",
-    "start": "node main.js",
-    "b-dev": "git checkout development",
-    "b-release": "git checkout master",
-    "git.refresh": "git fetch --all && git pull --all",
-    "git.upload": "git push --all",
-    "git.update": "git fetch --all && git pull --all && git push --all",
-    "dev-to-debug": "#git merge development",
-    "savedebug": "#git add * && git commit -e"
+    "start": "node _index.js",
+    "DEV": "python3 ./dev-scripts/raport-status.py",
+    "DEV.test": "python3 ./dev-scripts/raport-status.py",
+    "DEV.send-upload": "python3 ./dev-scripts/push-upload.py",
+    "DEV.get-update": "python3 ./dev-scripts/pull-update.py",
+    "DEV.refresh": "python3 ./dev-scripts/refresh-repo.py",
+    "DEV.publish": "python3 ./dev-scripts/publication.py"
   },
   "repository": {
     "type": "git",
@@ -44,11 +42,12 @@
     "url": "https://github.com/Sarverott/carnival-toolbox/issues"
   },
   "homepage": "https://github.com/Sarverott/carnival-toolbox#readme",
-  "devDependencies": {
-    "eslint": "^8.20.0",
-    "jest": "^28.1.3"
-  },
   "publishConfig": {
-   "@sarverott:registry": "https://npm.pkg.github.com"
- }
+    "@sarverott:registry": "https://npm.pkg.github.com",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0"
+  }
 }
