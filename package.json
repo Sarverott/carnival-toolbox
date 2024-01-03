@@ -43,10 +43,6 @@
   },
   "homepage": "https://github.com/Sarverott/carnival-toolbox#readme",
   "publishConfig": {
-    "@sarverott:registry": "https://registry.npmjs.org/",
-  },
-  "devDependencies": {
-    "eslint": "^8.56.0",
-    "jest": "^29.7.0"
+    "@sarverott:registry": "https://registry.npmjs.org/"
   }
 }
