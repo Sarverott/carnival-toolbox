@@ -12,7 +12,8 @@ function primeNumber(
   while(endingNumber-(++i)){
     var flag=true;
     for(var j in ret)
-      flag=(i%ret[j])?(false:flag);
+        if(i%ret[j])flag=false;
+    
     if(flag){
       ret.push(i);
       if(withFinderShift)

@@ -43,6 +43,6 @@ function timekeepLightPurpler(data, key){
 module.exports={
   plt:purpleLightTimekeeper,
   purpleLightTimekeeper,
-  tlp:timekeepLightPurpler
+  tlp:timekeepLightPurpler,
   timekeepLightPurpler
 }
