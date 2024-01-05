@@ -41,6 +41,20 @@ feel free to do what you desire, until you respects terms of license _(see ["LIC
 
 ---
 
+#### testing, experiments, view of behaviour
+need some practical presentation and experience what it is? invoke it, using node in console and take it on testride:
+
+```sh
+  # from thesame as install path
+  # after installation by npm
+  node ./node_modules/carnival-toolbox/_index.js
+  # after clone, or submodule adding
+  cd carnival-toolbox && npm start
+  # it can shock you if by looking on my other
+  # work you compare it with this CLI... experiments makes work funier!
+```
+
+---
 
 ### functionality list
 - random password generation - **password stuff**
