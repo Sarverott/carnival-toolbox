@@ -3,8 +3,7 @@ prime number finder
 Sett Sarverott 2022
 */
 //https://gist.github.com/Sarverott/c37b983be2253882844c4b010bd9e240
-/*
-function primeNumber(
+function powersOfTwo( //PREVIOUS primeNumber but it's fundamentally broken; it should work in opposite to what it dooooooo
   endingNumber=100,
   withFinderShift=false
 ){
@@ -28,33 +27,37 @@ function primeNumber(
     };
   return ret;
 }
-*/
 function primeNumber(limit, mode="reach"){ //modes: reach | count
   /*
-  algorithm:
+  devlog: comments are old code, use notes or algorithm:
   -preset empty primes array and one in testednumber
-  -increment the testednumber ###looping jump here<<<
-  -repeat for all in array is testednumber modulo prime equal zero
-    ---[OPTIMALISER]end if primes starts to be greater than half of testednumber - skip impossible to return true tests
-  -if all tests false result add testednumber value to primes (just keeping in mind obviouses: first loop has zero tests, it can't ligicjokering)
-  -repeat looping until reach wanted count or to given number
   */
   var result=[];
   var testNum=0;
   var i=0;
-  while(i<limit){
-    testNum++
-    var testflag=true;
-    for(var j=1;j<result.length&&testflag;j++)
-      testflag=testNum%result[j]!=0
-    if(testflag){
+  while(i<limit){ //-repeat looping until reach wanted count or to given number
+    testNum++ //-increment the testednumber
+    var testflag=true; //(just keeping in mind obviouses: first loop has zero tests, it can't ligicjokering)
+
+    for(
+      var j=1;
+      (
+        j<result.length
+        &&
+        testflag //-repeat for all in array is testednumber modulo prime equal zero #devlog: JINX
+        &&
+        !testNum/2<result[j]//---[OPTIMALISER]end if primes starts to be greater than half of testednumber - skip impossible to return true tests
+      );
+      j++
+    ) testflag = testNum % result[j] != 0 //-repeat for all in array is testednumber modulo prime equal zero #devlog: JINX
+
+    if(testflag){ //-if all tests true result add testednumber value to primes #devlog: false into true makes work easier here
       result.push(testNum);
-      if(mode=="count")
-        i++
+      if(mode=="count") i++ // limit is needed count of resulted numbers
     }
-    if(mode=="reach")
-      i++;
+
+    if(mode=="reach") i++; //limit is max limit, all resultet must be lesser than limit
   }
-  return result;
+  return result; // and GITARA SIEMA
 }
-module.exports=primeNumber;
+module.exports={primeNumber, powersOfTwo};
