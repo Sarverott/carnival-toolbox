@@ -1,9 +1,9 @@
 module.exports={
   jsonX:require("./json-gadgets.js"),
-  case:require("./case-gadgets.js"),
+  caseX:require("./case-gadgets.js"),
   randstr:require('./random-string.js'),
   prime:require('./find-prime-number.js').primeNumber,
-  antiPrimeNum:require('./find-prime-number.js').powerOfTwo,
+  antiPrime:require('./find-prime-number.js').powerOfTwo,
   musicaledCiphers:require('./music-easteregged-cryptography.js'),
   Fibonacci:require('./fibonacci.js')
 }
