@@ -56,9 +56,13 @@ function randomString_V4(
     })
   );
 }
-module.exports={
-  v1:randomString_V1,
-  v2:randomString_V2,
-  v3:randomString_V3,
-  v4:randomString_V4
+module.exports=function(...args){
+  var versionChoice="v1";
+  if(typeof args[0] == "string") versionChoice = args.shift();
+  return {
+    v1:randomString_V1,
+    v2:randomString_V2,
+    v3:randomString_V3,
+    v4:randomString_V4
+  }[versionChoice](...args);
 }
