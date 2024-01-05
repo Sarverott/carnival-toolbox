@@ -67,6 +67,7 @@ need some practical presentation and experience what it is? invoke it, using nod
 ### links related
 - __GitHub repo__ - https://github.com/Sarverott/carnival-toolbox
 - __NPM.com repo__ - https://www.npmjs.com/package/carnival-toolbox
+- __Intel into project__ - https://github.com/users/Sarverott/projects/16
 
 > Sarverott @ 2024
 
