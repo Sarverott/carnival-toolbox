@@ -48,7 +48,7 @@ var initialcasecabs=[
   (o)=>o.map((x)=>x[0].toUpperCase()).join("")
 ];
 
-var transformers={
+var caseTransformers={
   initialcasecabs,
   initialcase,
   snakecasecabs,
@@ -68,11 +68,11 @@ class Namespacer{
     Object.assign(this, setup);
   }
   from(casename){
-    this.caseFrom=transformers[casename][0];
+    this.caseFrom=caseTransformers[casename][0];
     return this;
   }
   to(casename){
-    this.caseInto=transformers[casename][1];
+    this.caseInto=caseTransformers[casename][1];
     return this;
   }
   get GO(){
@@ -88,19 +88,12 @@ class Namespacer{
   }
 }
 
-function transform(input){
+function changeCase(input){
   return new Namespacer(input);
 }
 
 module.exports={
   Namespacer,
-  transform,
-  initialcasecabs,
-  initialcase,
-  snakecasecabs,
-  snakecase,
-  camelcase,
-  pascalcase,
-  kebabcase,
-  transformers
+  changeCase,
+  caseTransformers
 };
