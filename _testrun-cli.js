@@ -15,6 +15,10 @@ const STANDARD_HEADER=CLI.colorize(
   CLI.textart("header-logo"),
   [CLI.reverse, CLI.reset]
 );
+const COLORFULL_HEADER=CLI.paintIt(CLI.FRONT.black)+CLI.rainbowize(
+  CLI.textart("header-logo"),
+  "BACK"
+);
 
 //const REPOS_INFO=CLI.lines(
 //  "",
@@ -76,7 +80,7 @@ function NEW_PROMPT(){
   });
   Object.defineProperty(TOOLBOX, "help", {
     get(){
-      console.log("\t\t # # # ABOUT CARNIVAL TOOLBOX # # #");
+      console.log(`\t\t ${CLI.rainbowize("# # #")} ABOUT CARNIVAL TOOLBOX ${CLI.rainbowize("# # #")}`);
       console.log("\t For detailed documentation, and usage guides go to official website of project.");
       console.log();
       console.log(REPOS_INFO);
@@ -119,7 +123,7 @@ function NEW_PROMPT(){
       console.log();
 
       console.log();
-      CLI.colorPrint("--------------", CLI.reverse);
+      console.log(CLI.rainbowize("--------------","BACK"));
       console.log();
 
       CLI.colorPrint(
@@ -140,7 +144,7 @@ function NEW_PROMPT(){
         CLI.FRONT.yellow
       );
       console.log();
-      CLI.colorPrint("--------------", CLI.reverse);
+      console.log(CLI.rainbowize("--------------","BACK"));
       console.log();
       //var descriptor={
       //  lvl:"library",
@@ -187,7 +191,28 @@ function NEW_PROMPT(){
   return readline.createInterface({
     input: process.stdin,
     output: process.stdout,
-    prompt: "|~\x1b[44m\x1b[31m ▓▒░ \x1b[0m \x1b[7m CT :: Sandbox lab \x1b[0m \x1b[44m\x1b[31m ░▒▓ \x1b[0m~>"
+    prompt: (
+      `: ${
+        CLI.colorize('@~~~' , [CLI.FRONT.gray,CLI.reset])
+      } ${
+        CLI.colorize(
+          CLI.colorize('▓▒░', [CLI.FRONT.red,CLI.reset]),
+          [CLI.blink,CLI.reset]
+        )
+      } CarnivalToolbox ${
+        CLI.colorize(
+          CLI.colorize('::', [CLI.FRONT.green,CLI.reset]),
+          [CLI.blink,CLI.reset]
+        )
+      } SandboxLab ${
+        CLI.colorize(
+          CLI.colorize('░▒▓', [CLI.FRONT.blue,CLI.reset]),
+          [CLI.blink,CLI.reset]
+        )
+      } ${
+        CLI.colorize('~~~>' , [CLI.FRONT.gray,CLI.reset])
+      } `
+    )
   }).on(
     'line',
     ON_PROMPT_LINE
@@ -197,22 +222,17 @@ function NEW_PROMPT(){
   );
 }
 function ON_PROMPT_CLOSED(){
-  console.log(" ... ");
-  var textTMP=" user-friendly escape sequence of programm... ";
-  var outputTMP=`\x1b[1mEXECUTING `;
-  for(var i=0;i<textTMP.length;i++){
-    outputTMP+=`\x1b[3${i%6+1}m`;
-    outputTMP+=textTMP.charAt(i);
-  }
-  outputTMP+='\x1b[0m';
-  console.log(outputTMP);
+  console.log("\n ... \n");
+  console.log(`\x1b[1mEXECUTING  ${CLI.rainbowize("user-friendly escape sequence of programm...")} `);
   console.log(REPOS_INFO);
-  console.log(STANDARD_HEADER);
-  console.log('\tThank you for testing/using/depending/requiring!');
-  console.log("\t\t\tBYE!");
+  console.log(COLORFULL_HEADER);
+  console.log('\n\tThank you for testing/using/depending/requiring!');
+  console.log("\t\t\tBYE!\n");
   process.exit(0);
 }
 function ON_PROMPT_LINE(line){
+  CLI.ring();
+  //process.stdout.write(CLI.paintIt(CLI.reset));
   //line=line.split(" ")
   //switch(){
   //  case 'hello':
@@ -237,29 +257,19 @@ function ON_PROMPT_LINE(line){
   //}
   //line
 
-
   const inputScript = new vm.Script(line);
   vm.createContext(TOOLBOX);
   //for (let i = 0; i < 10; ++i) {var textTMP=" user-friendly escape sequence of programm... ";
   //textTMP=" . . . ";
-  var outputTMP=' ';
-  for(var i=0;i<5;i++){
-    outputTMP+=`\x1b[3${Math.floor(Math.random()*5%6+1)}m`;
-    outputTMP+='- ';
-  }
-  console.log(outputTMP+'\x1b[0m');
-  //console.log("\x1b[2m . . . \x1b[0m");
+  console.log(CLI.rainbowize(" - - - - - "));
+
   try{
     console.log(inputScript.runInContext(TOOLBOX));
   }catch(e){
     console.log(e);
   }
-  outputTMP=' ';
-  for(var i=0;i<5;i++){
-    outputTMP+=`\x1b[3${Math.floor(Math.random()*6%6+1)}m`;
-    outputTMP+='- ';
-  }
-  console.log(outputTMP+'\x1b[0m');
+
+  console.log(CLI.rainbowize(" - - - - - "));
 
 
   //}

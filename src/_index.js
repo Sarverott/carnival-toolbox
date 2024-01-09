@@ -14,7 +14,7 @@ const CARNIVAL=new LibraryGuard();
 
 CARNIVAL.load="case-gadgets";
 CARNIVAL.load="json-gadgets";
-CARNIVAL.load='random-string';
+CARNIVAL.load='random-stuff';
 CARNIVAL.load='cool-math-things';
 CARNIVAL.load='custom-cryptography';
 CARNIVAL.load='terminal-tricks';

@@ -67,4 +67,11 @@ function randStr(...args){
     v4:randomString_V4
   }[versionChoice](...args);
 }
-module.exports={randStr}
+
+function arrayLottery(arr){
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+
+
+module.exports={randStr, arrayLottery}

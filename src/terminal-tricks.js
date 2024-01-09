@@ -2,7 +2,9 @@ const readline = require('readline');
 const repl = require('repl');
 const fs = require('fs');
 const path = require('path');
-const xmlToys = require("./xml-toys.js")
+
+const {arrayLottery} = require('./random-stuff.js');
+const {xmlEscCodesReplace, xmlTagsReplace} = require("./xml-toys.js");
 
 class CliTool{
   constructor(setup={textarts:"./"}){
@@ -37,6 +39,40 @@ class CliTool{
   colorize(data, codes=[7,0]){
     return `\x1b[${codes[0].toString()}m${data}\x1b[${codes[1].toString()}m`;
   }
+  paintIt(...codes){
+    return codes.map(
+      (colorcode)=>`\x1b[${colorcode}m`
+    ).join("");
+  }
+  rainbowize(
+    data,
+    mode="FRONT",
+    opts={
+      //useColors:null,
+      //banCollors:["black", "gray", "white"]
+    }
+  ){
+    var result = ``;
+    var banColors = ["black", "gray", "white"];
+    if(opts.hasOwnProperty("banColors")) banColors = opts.banColors;
+    var useColors = Object.keys(colorCodes.FACTORS).filter(
+      (colorname)=> !banColors.includes(colorname)
+    );
+    if(opts.hasOwnProperty("useColors")) useColors = opts.useColors;
+    for(var i=0; i<data.length; i++){
+      if(
+        ["\n","\r"].includes(data.charAt(i))
+      ){
+        result += `\x1b[${colorCodes[mode].black}m`;
+        //result += `\x1b[${colorCodes.reset}m`;
+      }else{
+        result += `\x1b[${colorCodes[mode][arrayLottery(useColors)]}m`;
+      }
+      result += data.charAt(i);
+    }
+    result += '\x1b[0m';
+    return result;
+  }
   lines(...lines){
     return lines.join("\n");
   }
@@ -64,6 +100,9 @@ class CliTool{
     }
     return result;
   }
+  ring(i=1){
+    process.stdout.write(this.BELL(i));
+  }
   loadPTXML(name){
     var fileContent=fs.readFileSync(
       path.join(
@@ -71,8 +110,8 @@ class CliTool{
         `${name}.ptxml`
       )
     ).toString("utf8").trim();
-    fileContent=xmlToys.xmlEscCodesReplace(fileContent);
-    fileContent=xmlToys.xmlTagsReplace(fileContent, CliTool.PTXML_REPLACE_COLORS);
+    fileContent=xmlEscCodesReplace(fileContent);
+    fileContent=xmlTagsReplace(fileContent, CliTool.PTXML_REPLACE_COLORS);
     return fileContent;
   }
 }
