@@ -1,3 +1,14 @@
+class Fibonacci{
+	constructor(){
+		this.last=1;
+		this.beforeLast=1;
+	}
+	next(){
+		var tmp=this.last;
+		this.last+=this.beforeLast;
+		this.beforeLast=tmp;
+	}
+}
 /*
 prime number finder
 Sett Sarverott 2022
@@ -60,4 +71,9 @@ function primeNumber(limit, mode="reach"){ //modes: reach | count
   }
   return result; // and GITARA SIEMA
 }
-module.exports={primeNumber, powersOfTwo};
+
+module.exports={
+	primeNumber,
+	powersOfTwo,
+	Fibonacci
+};

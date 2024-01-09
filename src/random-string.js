@@ -56,7 +56,8 @@ function randomString_V4(
     })
   );
 }
-module.exports=function(...args){
+//this will close all in one easy-to-use function
+function randStr(...args){
   var versionChoice="v1";
   if(typeof args[0] == "string") versionChoice = args.shift();
   return {
@@ -66,3 +67,4 @@ module.exports=function(...args){
     v4:randomString_V4
   }[versionChoice](...args);
 }
+module.exports={randStr}

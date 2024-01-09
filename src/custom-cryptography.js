@@ -3,7 +3,7 @@
   ***~~~~~~~~***
   plt tlp crypto functions
 */
-const Fibonacci = require('./fibonacci.js');
+const {Fibonacci} = require('./cool-math-things.js');
 /*
 {
   next:function(){
@@ -41,8 +41,8 @@ function timekeepLightPurpler(data, key){
 }
 
 module.exports={
-  plt:purpleLightTimekeeper,
+  PLT:purpleLightTimekeeper,
   purpleLightTimekeeper,
-  tlp:timekeepLightPurpler,
+  TLP:timekeepLightPurpler,
   timekeepLightPurpler
 }
