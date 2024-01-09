@@ -11,12 +11,34 @@ const CLI=new TOOLBOX.CliTool(
   }
 );
 
-const STANDARD_HEADER=CLI.colorize(
-  CLI.textart("header-logo"),
-  [CLI.reverse, CLI.reset]
-);
+const STANDARD_HEADER=
+  CLI.LOAD_HEAD(
+    "small"
+  ).paint(
+    "random",
+    "BACK",
+    [ "cyan" , "magenta" ]
+  ).shades(
+    CLI.dim,
+    CLI.paintIt(CLI.BACK.black, CLI.FRONT.green)
+  ).margins(
+    {top:2, left:20}
+  ).PRINT;
+
+const INMEDIATE_SUBHEADER=CLI.paintIt(CLI.BACK.black)+CLI.LOAD_HEAD(
+  "medium"
+).paint(
+  "random",
+  "FRONT",
+  [ "blue" , "green" ]
+).shades(
+  CLI.FRONT.red
+).margins(
+  {top:2, left:10}
+).PRINT
+
 const COLORFULL_HEADER=CLI.paintIt(CLI.FRONT.black)+CLI.rainbowize(
-  CLI.textart("header-logo"),
+  CLI.textart("big-logo-title"),
   "BACK"
 );
 
@@ -80,6 +102,9 @@ function NEW_PROMPT(){
   });
   Object.defineProperty(TOOLBOX, "help", {
     get(){
+
+      console.log(INMEDIATE_SUBHEADER);
+      console.log();
       console.log(`\t\t ${CLI.rainbowize("# # #")} ABOUT CARNIVAL TOOLBOX ${CLI.rainbowize("# # #")}`);
       console.log("\t For detailed documentation, and usage guides go to official website of project.");
       console.log();
@@ -119,6 +144,7 @@ function NEW_PROMPT(){
   });
   Object.defineProperty(TOOLBOX, "roadmap", {
     get(){
+      console.log();
       console.log("\t\t ROADMAP OF CARNIVAL TOOLBOX ");
       console.log();
 
@@ -276,6 +302,7 @@ function ON_PROMPT_LINE(line){
   //console.log(context);
   PROMPT.prompt();
 }
+console.clear();
 console.log(STANDARD_HEADER);
 console.log(REPOS_INFO);
 PROMPT=NEW_PROMPT();

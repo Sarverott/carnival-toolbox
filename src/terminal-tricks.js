@@ -114,6 +114,84 @@ class CliTool{
     fileContent=xmlTagsReplace(fileContent, CliTool.PTXML_REPLACE_COLORS);
     return fileContent;
   }
+  LOAD_HEAD(title){
+    return new HeaderTitle(
+      //title,
+      //this
+      this.textart(`${title}-logo-title`)
+    );
+  }
+}
+//header loader
+class HeaderTitle extends CliTool{
+  constructor(
+    //title,
+    //CLI_HOOK,
+    content
+  ){
+    super()
+    //this.title=title;
+    //this.CLI_HOOK=CLI_HOOK;
+    this.orginal=content;
+    this.prerender=this.orginal;
+    this.render=this.prerender;
+    this.marginTop=0;
+    this.marginLeft=0;
+  }
+  paint(mode, ...opts){
+    switch(mode){
+      case "random":
+        this.prerender=this.rainbowize(
+          this.orginal,
+          opts[0],
+          {
+            useColors:opts[1],
+            banColors:[]
+          }
+        )
+      break;
+      case "color":
+        this.prerender=this.colorize(
+          this.orginal,
+          opts
+        )
+      break;
+      case "not":
+        this.prerender=this.orginal;
+      break
+    }
+    this.render=this.prerender;
+    return this;
+  }
+  shades(modifyer=this.dim, colorUnify=""){
+    const dimmingList=["╔","═","╝","║","╚","╗","╦","─","|","_"];
+    var tmpEdit=this.prerender;
+    for(var shadow of dimmingList){
+      tmpEdit=tmpEdit.replaceAll(shadow, colorUnify+this.colorize(shadow, [modifyer,this.reset]));
+    }
+    this.render=tmpEdit;
+    return this;
+  }
+  margins(opts){
+    if(opts.hasOwnProperty("top")){
+      this.marginTop=opts.top;
+    }
+    if(opts.hasOwnProperty("left")){
+      this.marginLeft=opts.left;
+    }
+    return this;
+  }
+  get PRINT(){
+    const m_top=Array(this.marginTop).fill("\n").join("");
+    var m_left=Array(this.marginLeft).fill(" ").join("");
+    return "".concat(
+      m_top,
+      this.render.split("\n").map(
+        (line)=>m_left+line
+      ).join("\n")
+    );
+    //return this;
+  }
 }
 //based on answer on stack overflow
 //https://stackoverflow.com/questions/9781218/how-to-change-node-jss-console-font-color#answer-41407246
