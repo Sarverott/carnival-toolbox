@@ -121,6 +121,13 @@ class CliTool{
       this.textart(`${title}-logo-title`)
     );
   }
+  LOAD_PTXML_HEAD(title){
+    return new HeaderTitle(
+      //title,
+      //this
+      this.loadPTXML(`${title}-head`)
+    );
+  }
 }
 //header loader
 class HeaderTitle extends CliTool{
