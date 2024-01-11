@@ -88,15 +88,17 @@ while [ $REPEAT_SCRIPT == "1" ] ; do
   source <(grep = $DEV_DIR/env-setup.ini)
   REPEAT_SCRIPT=0
 
+  #PIP_REQUIRE=$pipRequire
+
   printSect "needed tools checkup"
 
-  require_check $npm_command
+  require_check $NPM
   if [ $REPEAT_SCRIPT == "1" ] ; then continue ;fi
-  require_check $pip_command
+  require_check $PIP
   if [ $REPEAT_SCRIPT == "1" ] ; then continue ;fi
-  require_check $python_command
+  require_check $PYTHON
   if [ $REPEAT_SCRIPT == "1" ] ; then continue ;fi
-  require_check $node_command
+  require_check $NODE
   if [ $REPEAT_SCRIPT == "1" ] ; then continue ;fi
 
   printSect "virtual enviroment checkup"
@@ -105,30 +107,42 @@ while [ $REPEAT_SCRIPT == "1" ] ; do
     echo "instalation of python3-venv by APT-GET:"
     sudo apt install python3-venv
     echo "creating virtual enviroment..."
-    $python_command -m venv _DEV_VENV
+    $PYTHON -m venv _DEV_VENV
   else
     echo "VENV directory exist, skipping install..."
   fi
   printf "virtual enviroment location: $(color_info "$(pwd)/_DEV_VENV")\n"
   echo "mounting source (_DEV_VENV/bin/activate)"
   source _DEV_VENV/bin/activate
+  #source <(grep = $DEV_DIR/env-setup.ini)
   printSect "installing pip packages"
-  $pip_command install pynpm PyGithub GitPython
+
+  if [ ! -r $DEV_DIR/requirements.txt ] ; then
+    printf "$(color_bold "FILE \"$DEV_DIR/requirements.txt\" NOT EXISTS!,")\n"
+    printf "$(color_bold "pip install by ini file presets...") (pynpm PyGithub GitPython requests)\n"
+    $PIP install pynpm PyGithub GitPython requests
+    printf "$(color_bold "SAVING \"$DEV_DIR/requirements.txt\"...")\n"
+    $PIP freeze >$DEV_DIR/requirements.txt
+  else
+    printf "$(color_bold "FILE \"$DEV_DIR/requirements.txt\" EXISTS!,")\n"
+    printf "$(color_bold "pip install by \"$DEV_DIR/requirements.txt\"...")\n"
+    $PIP install -r $DEV_DIR/requirements.txt
+  fi
   printSect "setting up npm"
   if [ ! -d node_modules ] ; then
     echo "npm installation with keeped dev dependencies"
-    $npm_command install --save-dev
+    $NPM install --save-dev
   else
     echo "npm already installed (node_module exist)"
     echo "skipping..."
   fi
   printf "$(color_bold "updating npm packages")\n"
-  $npm_command update
+  $NPM update
   printf "$(color_bold "for safety npm audit fix")\n"
-  $npm_command audit fix
+  $NPM audit fix
   #
   printSect "run devtools"
-  $python_command ./dev-scripts/main.py
+  $PYTHON ./developement/main.py
   printSect "script execution done!"
 done
 exit 0
