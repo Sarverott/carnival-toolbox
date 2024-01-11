@@ -1,6 +1,10 @@
 ![###carnival-toolbox###][header-picture-logo]
 
----
+![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/sarverott/carnival-toolbox/master?label=package.json%20version)
+![Dependents (via libraries.io)](https://img.shields.io/librariesio/dependents/npm/carnival-toolbox?&logo=npm&logoColor=%23ff4455&label=NPM%20dependents&labelColor=%23ffeedd&color=%23ff4455&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcarnival-toolbox)
+![npm downloads](https://img.shields.io/npm/dt/carnival-toolbox?logo=npm&logoColor=%23ff4455&label=NPM%20package%20downloads&labelColor=%23ffeedd&color=%23ff4455&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcarnival-toolbox)
+[![Documentation Status](https://readthedocs.org/projects/carnival-toolbox/badge/?version=latest)](https://carnival-toolbox.readthedocs.io/en/latest/?badge=latest)
+
 
 # IT'S HERE AND IN NPM PACKAGE MANAGER NOW
 Some of simple and usefull functions,
