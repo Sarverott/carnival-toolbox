@@ -1,17 +1,13 @@
 {
   "name": "carnival-toolbox",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
   "main": "_index.js",
   "scripts": {
     "start": "node _index.js",
     "test": "node _index --debug",
-    "DEV": "python3 ./dev-scripts/raport-status.py",
-    "DEV.test": "python3 ./dev-scripts/raport-status.py",
-    "DEV.send-upload": "python3 ./dev-scripts/push-upload.py",
-    "DEV.get-update": "python3 ./dev-scripts/pull-update.py",
-    "DEV.refresh": "python3 ./dev-scripts/refresh-repo.py",
-    "DEV.publish": "python3 ./dev-scripts/publication.py"
+    "DEV-linux": "./dev-scripts/QUICKSTART.sh",
+    "DEV-windows": "start .\\dev-scripts\\QUICKSTART.bat"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,7 @@
 node_modules
 /dev-scripts/*
 /.github/
+_DEV_*
 
 # Logs
 logs
