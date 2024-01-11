@@ -1,7 +1,10 @@
 node_modules
 /developement/*
+^/developement/npm-README.md
 /.github/
 _DEV_*
+/docs
+^/docs/npm-README.md
 
 # Logs
 logs

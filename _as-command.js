@@ -59,7 +59,7 @@ function EXECUTE(args, flags, paths){
     break;
     case "return":
       if(REF_BOOK.EXISTS(FUNCT)){
-
+        
       }else{
         console.error(`ERROR_RETURN_INVOKE: "${FUNCT}" is not part of carnival toolbox`)
       }
