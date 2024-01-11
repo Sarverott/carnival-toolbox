@@ -88,11 +88,16 @@ class Namespacer{
   }
 }
 
+function capitalFirst(str){
+  return str.charAt(0)+str.slice(0);
+}
+
 function changeCase(input){
   return new Namespacer(input);
 }
 
 module.exports={
+  capitalFirst,
   Namespacer,
   changeCase,
   caseTransformers

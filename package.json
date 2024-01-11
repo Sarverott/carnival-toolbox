@@ -1,6 +1,6 @@
 {
   "name": "carnival-toolbox",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
   "main": "_index.js",
   "scripts": {
@@ -17,6 +17,10 @@
     "url": "git+https://github.com/Sarverott/carnival-toolbox.git"
   },
   "keywords": [
+    "capital",
+    "first",
+    "char",
+    "letter",
     "namespace",
     "camelcase",
     "camel",
