@@ -54,6 +54,28 @@ need some practical presentation and experience what it is? invoke it, using nod
   # work you compare it with this CLI... experiments makes work funier!
 ```
 
+## FOR DEVELOPERS
+There are some cool lifehacks for creators. OS-dedicated `QUICKSTART`
+scripts will guide you through boring and required stuff.
+
+```sh
+  #developers needs some extra python and node packages
+  #quick lounchers will make everything what is needed
+  #for windows users
+  npm run DEV.windows
+  #for linux users
+  npm run DEV.linux
+  #for android users
+  npm run DEV.android
+  #for MacOS users
+  npm run DEV.macintosh
+  #this reminder will be shown,
+  #when you lounch "npm run DEV",
+  #but because it can't automaticaly detect os and shell
+  #you have to make it by hand
+
+```
+
 ---
 
 ### functionality list
@@ -69,6 +91,6 @@ need some practical presentation and experience what it is? invoke it, using nod
 - __NPM.com repo__ - https://www.npmjs.com/package/carnival-toolbox
 - __Project's developement roadmap__ - https://github.com/users/Sarverott/projects/16?fullscreen=true
 
-> Sarverott @ 2024
+> Copyright (c) 2022 Sett Sarverott <sarverott@gmail.com> released on terms of MIT license
 
 [header-picture-logo]: https://64.media.tumblr.com/14cb2c2a576ab5cd1cefcd2ec5a2fe5e/6731a5ed7242f36a-40/s1280x1920/1024d02a13283e30c1c4fae123ee8d05ce6dd8b8.pnj

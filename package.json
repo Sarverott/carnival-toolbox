@@ -6,8 +6,11 @@
   "scripts": {
     "start": "node _index.js",
     "test": "node _index --debug",
-    "DEV-linux": "./dev-scripts/QUICKSTART.sh",
-    "DEV-windows": "start .\\dev-scripts\\QUICKSTART.bat"
+    "DEV": "echo \" HEY!\" && echo instead of NPM RUN DEV use && echo _ && echo \"_   npm run DEV.linux\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.windows\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.macintosh\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.android\" && echo _ ",
+    "DEV.linux": "./dev-scripts/QUICKSTART.sh",
+    "DEV.macintosh": "echo 'currently not suported ;('",
+    "DEV.android": "echo 'currently not suported ;('",
+    "DEV.windows": "start .\\dev-scripts\\QUICKSTART.bat"
   },
   "repository": {
     "type": "git",
