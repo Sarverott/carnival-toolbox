@@ -1,16 +1,16 @@
 {
   "name": "carnival-toolbox",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
   "main": "_index.js",
   "scripts": {
     "start": "node _index.js",
     "test": "node _index --debug",
     "DEV": "echo \" HEY!\" && echo instead of NPM RUN DEV use && echo _ && echo \"_   npm run DEV.linux\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.windows\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.macintosh\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.android\" && echo _ ",
-    "DEV.linux": "./dev-scripts/QUICKSTART.sh",
+    "DEV.linux": "./developement/QUICKSTART.sh",
     "DEV.macintosh": "echo 'currently not suported ;('",
     "DEV.android": "echo 'currently not suported ;('",
-    "DEV.windows": "start .\\dev-scripts\\QUICKSTART.bat"
+    "DEV.windows": "start .\\developement\\QUICKSTART.bat"
   },
   "repository": {
     "type": "git",
