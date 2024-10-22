@@ -1,6 +1,6 @@
 {
   "name": "carnival-toolbox",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
   "main": "app/_index.js",
   "scripts": {
