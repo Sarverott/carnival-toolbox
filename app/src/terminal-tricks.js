@@ -7,7 +7,7 @@ const {arrayLottery} = require('./random-stuff.js');
 const {xmlEscCodesReplace, xmlTagsReplace} = require("./xml-toys.js");
 
 class CliTool{
-  constructor(setup={textarts:"./"}){
+  constructor(setup={textarts:"../"}){
     Object.assign(this, setup);
     Object.assign(this, colorCodes);
     //this.colorPrint=colorPrint;
