@@ -6,8 +6,8 @@ const vm = require('vm');
 
 const CLI=new TOOLBOX.CliTool(
   {
-    textarts:"./resources/text",
-    ptxmls:"./resources/text"
+    textarts:"../resources/text",
+    ptxmls:"../resources/text"
   }
 );
 
