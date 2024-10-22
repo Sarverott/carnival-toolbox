@@ -27,7 +27,7 @@ formats: all
 
 python:
   install:
-  - requirements: docs/requirements.txt
+  - requirements: conf/requirements.txt
 
 search:
    ignore:
