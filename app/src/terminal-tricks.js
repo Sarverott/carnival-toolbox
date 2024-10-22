@@ -18,7 +18,7 @@ class CliTool {
   }
   textart(name) {
     return fs
-      .readFileSync(path.join(this.textarts, `${name}.txt`))
+      .readFileSync(path.join(__dirname, this.textarts, `${name}.txt`))
       .toString("utf8")
       .trim();
   }
@@ -90,7 +90,7 @@ class CliTool {
   }
   loadPTXML(name) {
     var fileContent = fs
-      .readFileSync(path.join(this.ptxmls, `${name}.ptxml`))
+      .readFileSync(path.join(__dirname, this.ptxmls, `${name}.ptxml`))
       .toString("utf8")
       .trim();
     fileContent = xmlEscCodesReplace(fileContent);
