@@ -5,7 +5,8 @@
   "main": "_index.js",
   "scripts": {
     "start": "node _index.js",
-    "test": "node _index --debug",
+    "test": "jest",
+    "lint": "eslint",
     "DEV": "echo \" HEY!\" && echo instead of NPM RUN DEV use && echo _ && echo \"_   npm run DEV.linux\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.windows\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.macintosh\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.android\" && echo _ ",
     "DEV.linux": "./developement/QUICKSTART.sh",
     "DEV.macintosh": "echo 'currently not suported ;('",
@@ -48,5 +49,15 @@
   "homepage": "https://github.com/Sarverott/carnival-toolbox#readme",
   "publishConfig": {
     "@sarverott:registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
+    "jest": "^29.7.0"
   }
 }

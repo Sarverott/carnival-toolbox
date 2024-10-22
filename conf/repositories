@@ -1,0 +1,11 @@
+#/media/cdrom/apks
+http://mirrors.edge.kernel.org/alpine/v3.17/main
+http://mirrors.edge.kernel.org/alpine/v3.17/community
+#http://mirrors.edge.kernel.org/alpine/edge/main
+#http://mirrors.edge.kernel.org/alpine/edge/community
+#http://mirrors.edge.kernel.org/alpine/edge/testing
+
+http://alpine.mirror.far.fi/edge/main
+#http://alpine.mirror.far.fi/edge/community
+#http://alpine.mirror.far.fi/edge/testing
+
