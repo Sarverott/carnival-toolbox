@@ -2,9 +2,9 @@
   "name": "carnival-toolbox",
   "version": "1.8.0",
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
-  "main": "src/_index.js",
+  "main": "app/_index.js",
   "scripts": {
-    "start": "node ./src/_index.js",
+    "start": "node ./app/_index.js",
     "test": "jest",
     "lint": "eslint",
     "DEV": "echo \" HEY!\" && echo instead of NPM RUN DEV use && echo _ && echo \"_   npm run DEV.linux\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.windows\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.macintosh\" && echo _ && echo _OR_ && echo _ && echo \"_   npm run DEV.android\" && echo _ ",
