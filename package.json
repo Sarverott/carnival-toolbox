@@ -11,7 +11,8 @@
     "DEV.linux": "./developement/QUICKSTART.sh",
     "DEV.macintosh": "echo 'currently not suported ;('",
     "DEV.android": "echo 'currently not suported ;('",
-    "DEV.windows": "start .\\developement\\QUICKSTART.bat"
+    "DEV.windows": "start .\\developement\\QUICKSTART.bat",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
