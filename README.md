@@ -95,6 +95,6 @@ scripts will guide you through boring and required stuff.
 - __NPM.com repo__ - https://www.npmjs.com/package/carnival-toolbox
 - __Project's developement roadmap__ - https://github.com/users/Sarverott/projects/16?fullscreen=true
 
-> Copyright (c) 2022 Sett Sarverott <sarverott@gmail.com> released on terms of MIT license
+> Copyright (c) 2022 Sett Sarverott <sarverott@gmail.com> released on terms of [MIT license](https://sett.mit-license.org/)
 
 [header-picture-logo]: https://64.media.tumblr.com/14cb2c2a576ab5cd1cefcd2ec5a2fe5e/6731a5ed7242f36a-40/s1280x1920/1024d02a13283e30c1c4fae123ee8d05ce6dd8b8.pnj
