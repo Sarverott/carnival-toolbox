@@ -1,6 +1,6 @@
 {
   "name": "carnival-toolbox",
-  "version": "1.8.9",
+  "version": "1.8.10",
   "description": "a collection of all kind of scripts, codes and tools with universal appliance - this toolkit should fits great to your disguises, outfits and attires",
   "main": "app/_index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "DEV.linux": "./developement/QUICKSTART.sh",
     "DEV.macintosh": "echo 'currently not suported ;('",
     "DEV.android": "echo 'currently not suported ;('",
-    "DEV.windows": "start .\\developement\\QUICKSTART.bat"
+    "DEV.windows": "start .\\developement\\QUICKSTART.bat",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -61,6 +62,7 @@
     "eslint-plugin-promise": "^6.6.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
-    "jsr": "^0.14.3"
+    "jsr": "^0.14.3",
+    "skills": "^1.5.20"
   }
 }
