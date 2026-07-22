@@ -1,0 +1,6 @@
+{
+  "name": "@sarverott/carnival-toolbox",
+  "version": "1.8.9",
+  "license": "MIT",
+  "exports": "./app/_index.js"
+}
