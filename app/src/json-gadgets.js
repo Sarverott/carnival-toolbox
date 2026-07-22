@@ -1,6 +1,6 @@
 const fs=require("fs");
 
-function readFile(filepath, customSetup={}){
+function loadJSON(filepath, customSetup={}){
   var output=null;
   try{
     output=JSON.parse(
@@ -18,7 +18,7 @@ function readFile(filepath, customSetup={}){
   }
   return output;
 }
-function writeFile(filepath, context, customSetup={}){
+function saveJSON(filepath, context, customSetup={}){
   //var output=null;
   //customSetup=Object.assign({space:null, replacer:null})
   try{
@@ -64,24 +64,24 @@ class JsonFile{
       if(this.setup.createNonExisting){
         fs.writeFileSync(filepath, "0", this.setup);
       }else{
-        throw "JSON_FILE_NOT_EXISTS"
+        throw "JSON_FILE_EXISTANCE_ERROR"
       }
     }
   }
   get content(){
-    return readFile(this.path, this.setup);
+    return loadJSON(this.path, this.setup);
   }
   set content(data){
-    writeFile(this.path, data, this.setup);
+    saveJSON(this.path, data, this.setup);
   }
 }
 
-function file(...args){
+function configFile(...args){
   return new JsonFile(...args);
 }
 module.exports={
-  file,
+  configFile,
   JsonFile,
-  readFile,
-  writeFile
+  loadJSON,
+  saveJSON
 };

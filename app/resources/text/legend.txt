@@ -1,0 +1,5 @@
+LEGEND:
+
+Hi there!
+write one of these from list (case sensitive) in prompt,
+it's sandboxed code evaluator, so JS is also accepted.

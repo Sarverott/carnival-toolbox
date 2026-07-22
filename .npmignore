@@ -1,4 +1,11 @@
+node_modules
+/developement/*
+^/developement/npm-README.md
+/.github/
 _DEV_*
+/docs
+^/docs/npm-README.md
+
 # Logs
 logs
 *.log
@@ -6,7 +13,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -104,3 +110,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+conf/
+
+app/developement

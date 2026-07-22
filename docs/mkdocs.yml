@@ -1,0 +1,16 @@
+site_name: Carnival Toolbox
+site_description: documentation of carnival-toolbox javascript module published on NPM and GitHub
+site_author: Sett Sarverott
+nav:
+  - Home: index.md
+  - About: about.md
+
+theme: readthedocs
+
+repo_url: https://github.com/Sarverott/carnival-toolbox
+
+prebuild_index: true
+
+plugins:
+  - search:
+      indexing: 'full'
