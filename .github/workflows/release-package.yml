@@ -13,7 +13,16 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-
+  publish-jsr:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+      - name: Publish package
+        run: npx jsr publish
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
